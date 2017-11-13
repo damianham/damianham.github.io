@@ -1,0 +1,34 @@
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.pull-left{
+	display: inline-block;
+	float: left;
+}
+
+.pull-right{
+	float: right;
+	display: inline-block;
+}
+
+img[alt="benchmarks"]{
+	width: 500px;
+}
+
+img[alt="beer"]{
+	float: right;
+	height: 200px;
+}
+
+img[alt="beer again"]{
+	height: 200px;
+}
+
+img[alt="more beer"]{
+	float: right;
+	height: 300px;
+	padding-left: 20px;
+}

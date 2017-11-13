@@ -1,1 +1,23 @@
 theme: jekyll-theme-slate
+# Dependencies
+markdown:         kramdown
+
+gems: 			  [jekyll-paginate, jekyll-gist]
+
+# Setup
+title:            Web / Tech / Boats
+tagline:          'Building cool tech for boats'
+description:      'Web technologies, code, server applications, sailing, salsa'
+url:              http://damianham.github.io
+
+author:
+  name:           'Damian Hamill'
+  url:            https://twitter.com/damianham
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/damianham
