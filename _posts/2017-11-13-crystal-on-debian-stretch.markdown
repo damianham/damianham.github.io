@@ -13,9 +13,11 @@ Check out these [benchmarks](https://github.com/kostya/benchmarks) to see how im
 
 ![benchmarks](http://i.imgur.com/cjoXet6.png)
 
-One of the issues with Ruby and Ruby on Rails apps is that they can't be distributed to customers without leaving your intellectual property wide open to copying.  Some time ago I built a 3 stage process to bootstrap a Rails application compiled with JRuby and running in the JVM.  It worked but it was complicated.  Crystal gives us an opportunity to distribute self contained Ruby applications to customers in executable binary format.
+One of the issues with Ruby and Ruby on Rails apps is that they can't be distributed to customers without leaving your intellectual property wide open to copying.  Some time ago I built a 3 stage process to bootstrap a Rails application compiled with JRuby and running in the JVM.  It worked but it was complicated and of course requires a compatible JVM on the client workstation.  Crystal gives us an opportunity to distribute self contained Ruby applications to customers in executable binary format.
 
-Crystal installs and runs without issues on Mac OSX however I had a few problems installing on Debian Stretch, but no worries - they are easily overcome.  There isn't (at this time) an installable debian package for Stretch so I found the best option is to install with linuxbrew and to do it in 2 stages.  First of all install linuxbrew with
+Crystal installs and runs without issues on Mac OSX however I had a few problems installing on Debian Stretch, but no worries - they are easily overcome.  There isn't (at this time) an installable debian package for Stretch so I found the best option is to install with linuxbrew.  Read on for details of how I got it working on Debian Stretch.
+
+First of all install linuxbrew with
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ```
@@ -60,7 +62,7 @@ Then in the terminal install the shard dependencies with
 ```sh
 shards install
 ```
-[Shards](https://github.com/crystal-lang/shards) is a dependency manager similar to ruby gems or npm and it came along with the crystal install.  Let's add a little hello world web page.  Open src/mywebapp.cr in an editor and repalce the content with
+[Shards](https://github.com/crystal-lang/shards) is a dependency manager similar to ruby gems or npm and it came along with the crystal install (crystal deps does the same thing).  Let's add a little hello world web page.  Open src/mywebapp.cr in an editor and repalce the content with
 
 ```ruby
 require "kemal"
@@ -91,9 +93,12 @@ If everything is OK you should see the following in the terminal
 ```
 Open a browser and visit http://localhost:3000 and say hello to your running crystal application.
 
-I am building a single page application using [PREACT](https://preactjs.com/) and using Kemal as the JSON api.  I won't be interacting with a database but check out the list in [awesome-crystal](https://github.com/veelenga/awesome-crystal) for your database driver and ORM needs.  You have noticed of course that I am prefixing the crystal command with the LD_LIBRARY_PATH=...
+A good choice for building a single page application would be [PREACT](https://preactjs.com/) and using Kemal as the JSON api.  For database access check out the list in [awesome-crystal](https://github.com/veelenga/awesome-crystal) for your database driver and ORM needs.  
 
-You don't want to have to type this all the time do you ?  No worries you don't have to, npm and gulp to the rescue.  I am building the frontend in Javascript (Preact) so I am using npm to manage dependencies.  I can also use npm to run commands. Let's initialise our project with npm and set it up
+You have noticed of course that I am prefixing the crystal command with the LD_LIBRARY_PATH=...
+You don't want to have to type this all the time do you ?  You could add this to your environment profile however I like to keep things isolated from my base workstation.  I use rbenv for isolated Ruby and Gems installations which neatly sets up my environment on a per project basis but I didn't find anything similar for crystal.
+
+No worries, npm and gulp to the rescue.  I am building the frontend of my apps in Javascript (Preact) bundled with Webpack so I am using npm to manage dependencies.  I can also use npm to run commands. Let's initialise our project with npm and set it up
 ```sh
 npm init
 ```
