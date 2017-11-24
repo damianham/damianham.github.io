@@ -15,7 +15,7 @@ If only I had realised at the time advertising would become the backbone of the 
 
 As CTO of a UK tech startup I designed the architecture and implemented a proof of concept for a totally reliable distributed email service and lead a team in the development of the product.
 
-<h2>Purpose</h2>
+<h2>What I do</h2>
 
 When not under contract I spend most of my free time exploring new technologies and frameworks and working on my own startup projects.  I am currently working on my Smart Boat Network project which is a mobile application (SmartBoat on Apple and Google app stores), a web application [BoatData](https://boatdata.net) and Raspberry Pi and microcontroller hardware to enhance the interaction with a boat's electronic systems and bring instrument data to anywhere on the boat.  
 

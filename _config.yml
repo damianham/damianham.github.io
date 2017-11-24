@@ -5,9 +5,9 @@ markdown:         kramdown
 gems: 			  [jekyll-paginate, jekyll-gist]
 
 # Setup
-title:            Web / Tech / Boats
+title:            Tech On Boats
 tagline:          'Building cool tech for boats'
-description:      'Web technologies, code, server applications, sailing, salsa'
+description:      'Ruby, Javascript, Crystal, Mobile, Web, Server and IoT applications'
 url:              http://damianham.github.io
 
 author:
@@ -17,7 +17,7 @@ author:
 paginate:         5
 
 # Custom vars
-version:          1.0.0
+version:          1.0.1
 
 github:
   repo:           https://github.com/damianham
